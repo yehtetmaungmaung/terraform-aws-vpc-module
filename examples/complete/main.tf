@@ -18,7 +18,7 @@ locals {
 # VPC Module
 ################################################################################
 
-# trivy:ignore:AVD-AWS-0178:VPC Flow Logs are meant to be enabled by terraform-aws-vpc-flow-logs-s3-bucket
+
 module "vpc" {
   source = "../../"
 

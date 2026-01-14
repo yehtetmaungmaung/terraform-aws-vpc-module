@@ -6,6 +6,8 @@ locals {
   len_private_subnets = length(var.private_subnets)
 
 }
+
+# trivy:ignore:AVD-AWS-0178:VPC Flow Logs are meant to be enabled by terraform-aws-vpc-flow-logs-s3-bucket in root module
 resource "aws_vpc" "this" {
 
   cidr_block = var.cidr
@@ -29,6 +31,7 @@ locals {
 
   num_public_route_tables = var.create_multiple_public_route_tables ? local.len_public_subnets : 1
 }
+
 
 resource "aws_subnet" "public" {
   # The number of public subnet CIDR blocks specified in public_subnets must be greater than or

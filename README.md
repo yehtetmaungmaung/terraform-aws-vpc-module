@@ -14,6 +14,7 @@ This template is inspired by Robert Hafner's. Checkout his work [here](https://g
 
 ## Todo
 * Create tests & run tests and/or in example dir?
+* Generate plan in pull request
 
 <!-- BEGIN_TF_DOCS -->
 ## Inputs
