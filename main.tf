@@ -7,7 +7,6 @@ locals {
 
 }
 
-# trivy:ignore:AVD-AWS-0178:VPC Flow Logs are meant to be enabled by terraform-aws-vpc-flow-logs-s3-bucket in root module
 resource "aws_vpc" "this" {
 
   cidr_block = var.cidr

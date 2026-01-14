@@ -100,7 +100,7 @@ jobs:
         id: checkov
         uses: bridgecrewio/checkov-action@v12
         with:
-          directory: .
+          directory: examples/
           framework: terraform
 
       - name: Run Trivy
