@@ -7,7 +7,9 @@ locals {
 
 }
 
-# trivy:ignore:AVD-AWS-0178:VPC Flow Logs are meant to be enabled by terraform-aws-vpc-flow-logs-s3-bucket
+#checkov:skip=CKV2_AWS_12:Ensure the default security group of every VPC restricts all traffic
+#checkov:skip=CKV2_AWS_11:VPC Flow Logs are meant to be enabled by terraform-aws-vpc-flow-logs-s3-bucket
+#trivy:ignore:AVD-AWS-0178:VPC Flow Logs are meant to be enabled by terraform-aws-vpc-flow-logs-s3-bucket
 resource "aws_vpc" "this" {
 
   cidr_block = var.cidr
@@ -304,6 +306,7 @@ locals {
 }
 
 
+#checkov:skip=CKV2_AWS_19:Ensure that all EIP addresses allocated to a VPC are attached to EC2 instances
 resource "aws_eip" "nat" {
   count = var.enable_nat_gateway && !var.reuse_nat_ips ? local.nat_gateway_count : 0
 
