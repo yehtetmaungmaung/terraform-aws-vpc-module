@@ -30,7 +30,7 @@ test_validation:
 .PHONY: test_tflint
 test_tflint:
 	tflint --init
-	tflint
+	tflint --recursive
 
 .PHONY: terratest
 terratest:
